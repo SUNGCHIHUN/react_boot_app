@@ -10,7 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.packt.cardatabase.domain.Car;
-import com.packt.cardatabase.domain.CarCrudRepository;
+import com.packt.cardatabase.domain.CarRepository;
 import com.packt.cardatabase.domain.Owner;
 import com.packt.cardatabase.domain.OwnerRepository;
 
@@ -20,7 +20,7 @@ public class CardatabaseApplication implements CommandLineRunner {
 	private static final Logger logger = LoggerFactory.getLogger(CardatabaseApplication.class);
 
 	@Autowired
-	private CarCrudRepository repository;
+	private CarRepository repository;
 
 	@Autowired
 	private OwnerRepository ownerRepository;

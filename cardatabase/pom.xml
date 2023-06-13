@@ -55,6 +55,11 @@
 			<artifactId>mariadb-java-client</artifactId>
 		</dependency>
 		
+		<!-- Spring Data Rest -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
 
 		<!-- Lombok -->
 		<dependency>
