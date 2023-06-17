@@ -13,6 +13,8 @@ import com.packt.cardatabase.domain.Car;
 import com.packt.cardatabase.domain.CarRepository;
 import com.packt.cardatabase.domain.Owner;
 import com.packt.cardatabase.domain.OwnerRepository;
+import com.packt.cardatabase.domain.User;
+import com.packt.cardatabase.domain.UserRepository;
 
 @SpringBootApplication
 public class CardatabaseApplication implements CommandLineRunner {
@@ -24,6 +26,9 @@ public class CardatabaseApplication implements CommandLineRunner {
 
 	@Autowired
 	private OwnerRepository ownerRepository;
+
+	@Autowired
+    private UserRepository urepository;
 
 	// Spring Boot Start
 	public static void main(String[] args) {
@@ -49,6 +54,14 @@ public class CardatabaseApplication implements CommandLineRunner {
 		for (Car car : repository.findAll()) {
 			logger.info(car.getBrand() + " " + car.getModel());
 		}
+
+		// 사용자1 이름: user, 암호: user
+		urepository.save(new User("user", "$2a$04$2mCXATIBFBkHymd0sn0JB.ElEyk6LzC5/4/2KeAY8e8s00cB04WbO", "USER"));
+
+		// 사용자2 이름: admin, 암호: admin
+		urepository.save(new User("admin", "$2a$04$wVmciRBL98H/kss4O3Y4IOWu/Uf1sWYXpNjdApSd0MbNPLoTAXes6", "ADMIN"));
+
+
 	}
 
 }
